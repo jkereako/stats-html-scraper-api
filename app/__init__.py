@@ -23,7 +23,7 @@
     :copyright: (c) 2013 by NESN.
     :license: BSD, see LICENSE for more details.
 """
-from flask import Flask, jsonify, abort
+from flask import Flask, jsonify, render_template
 from werkzeug.contrib.cache import SimpleCache
 from redis import Redis
 from redis.exceptions import ConnectionError
@@ -48,11 +48,37 @@ try:
 except ConnectionError:
     raise ConnectionError(" The Redis server is inactive. Activate it with the command `redis-server`.")
 
+@app.route('/', methods = ['GET'])
+def home():
+    return render_template("home.html")
+
+#-- Error handlers
+@app.errorhandler(400)
+def bad_request(error):
+    """
+    Renders 400 response
+    :returns: JSON
+    :rtype: flask.Response
+    """
+    return jsonify(message="Error 400: Bad request",success=False), 400
+
+@app.errorhandler(403)
+def forbidden(error):
+    """
+    Renders 404 response
+    :returns: JSON
+    :rtype: flask.Response
+    """
+    return jsonify(message="Error 403: Forbidden",success=False), 404
+
 @app.errorhandler(404)
 def not_found(error):
-    response = jsonify(status=404, message="No interface defined for URL.")
-    response.status_code = 404
-    return response
+    """
+    Renders 404 response
+    :returns: JSON
+    :rtype: flask.Response
+    """
+    return jsonify(message="Error 404: Not found",success=False), 404
 
 @app.route('/help', methods = ['GET'])
 def help():
@@ -70,20 +96,7 @@ def help():
             # func_list[rule.rule] = app.view_functions[rule.endpoint].__doc__
     return jsonify(data=func_list, meta={"description" : "List of URL endpoints."})
 
-# @app.before_request
-# def return_cached():
-#     # if GET and POST not empty
-#     if not request.values:
-#         response = cache.get(request.path)
-#         if response:
-#             return response
-
-# @app.after_request
-# def cache_response(response):
-#     if not request.values:
-#         cache.set(request.path, response, CACHE_TIMEOUT)
-#     return response
-
+#-- Controllers
 from app.views import injuries
 from app.views import posts
 from app.views import rankings
