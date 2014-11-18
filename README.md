@@ -3,6 +3,9 @@ Scrapes the URL [nesn.stats.com](http://nesn.stats.com) using [Beautiful Soup 4.
 
 I began this project while employed at [NESN](http://nesn.com) to better understand Python and to learn Flask. The intended goal was to organize STATS's data into an intelligble resource, because, as you can see from the website, it contains HTML markup carried over from 1996. It was never used for production, mainly due to the fact it scrapes HTML which is notoriously unreliable, but also because there was no immediate use for it.
 
+# Installation
+See [`INSTALL.md`](https://github.com/jkereako/stats-html-scraper-api/blob/master/INSTALL.md).
+
 # Supported endpoints
 Below are all the endpoints registered with this API. Not all of them work.
  - `/standings/mlb/` 
