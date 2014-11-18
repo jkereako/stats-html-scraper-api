@@ -28,12 +28,16 @@ $ virtualenv env
 New python executable in env/bin/python
 Installing setuptools, pip...done.
 ```
-###Install package dependencies
-`$ pip install -r requirements.txt`
+####Start the virtual environment and install package dependencies
+```sh
+$ source  env/bin/activate
+(env) $ pip install -r requirements.txt
+...
+```
 
 ####Run the webserver
 ```sh
-$ python run.py 
+(env) $ python run.py 
  * Running on http://localhost:5000/
  * Restarting with reloader
 ```
