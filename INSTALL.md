@@ -30,3 +30,10 @@ Installing setuptools, pip...done.
 ```
 ###Install package dependencies
 `$ pip install -r requirements.txt`
+
+####Run the webserver
+```sh
+$ python run.py 
+ * Running on http://localhost:5000/
+ * Restarting with reloader
+```
