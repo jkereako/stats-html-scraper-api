@@ -1,6 +1,6 @@
 # Installation
 ## Binary requirements
-First, you'll need to install [Redis server](http://redis.io/download). This is used for caching. You will have to install this from source, but, it's simple to do so:
+First, you'll need to install [Redis server](http://redis.io/download). This is used to build a run-time look-up table to compensate for STATS's silly resource identifier scheme (e.g. teams are identified by an integer, and not the team name). You will have to install this from source, but, it's simple to do so:
 
 ```sh
 $ make
