@@ -1,7 +1,9 @@
 # STATS, LLC. scraper
-Scrapes the URL [nesn.stats.com](http://nesn.stats.com) using [Beautiful Soup 4.3.2](http://www.crummy.com/software/BeautifulSoup/) and returns a JSON object using Flask's [jsonify](http://flask.pocoo.org/docs/0.10/api/#flask.json.jsonify).
+Scrapes data from [NESN's web site hosted with STATS](http://nesn.stats.com) using [Beautiful Soup 4.3.2](http://www.crummy.com/software/BeautifulSoup/) and returns a JSON object using Flask's [jsonify](http://flask.pocoo.org/docs/0.10/api/#flask.json.jsonify).
 
-I began this project while employed at [NESN](http://nesn.com) to better understand Python and to learn Flask. The intended goal was to organize STATS's data into an intelligble resource, because, as you can see from the website, it contains HTML markup carried over from 1996. It was never used for production, mainly due to the fact it scrapes HTML which is notoriously unreliable, but also because there was no immediate use for it.
+I began this project while employed at [NESN](http://nesn.com) to better understand Python and to learn Flask. The intended goal was to organize STATS's data into an intelligble resource for use with client applications. As you can see from the website, STATS contains HTML markup circa 1996.
+
+This API was never used for production, partly because scraping HTML is notoriously unreliable——although, even 1 year later (Oct. 2014) this API still functions perfectly——but mostly because there was no clear to monetize this. So, it was a purely acedemic exercise.
 
 # Installation
 See [`INSTALL.md`](https://github.com/jkereako/stats-html-scraper-api/blob/master/INSTALL.md).
