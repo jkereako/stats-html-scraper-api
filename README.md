@@ -1,6 +1,8 @@
 # STATS, LLC. scraper
 A [Flask](http://flask.pocoo.org/) application which scrapes data from [NESN's web site hosted at STATS.com](http://nesn.stats.com) using [Beautiful Soup 4.3.2](http://www.crummy.com/software/BeautifulSoup/) and returns a JSON object using Flask's [jsonify](http://flask.pocoo.org/docs/0.10/api/#flask.json.jsonify).
 
+The title of this project is a slight misnomer because this application also pulls data from NESN's website via [WordPress.com's JSON API](https://developer.wordpress.com/docs/api/). The only feature this app adds to the already robust API that the Automattic folks built, is it associates the number of Facebook likes and the number of Twitter retweets for each article. You would think WordPress.com's API would handle this already, but it doesn't.
+
 I began this project while employed at [NESN](http://nesn.com) to better understand Python and to learn the Flask framework. The intended goal was to organize STATS's data into an intelligble resource for use with client applications. Take a look at STATS's website and you'll see contains HTML markup circa 1996.
 
 This API was never used for production, partly because scraping HTML is notoriously unreliable—but, 1 year after original development and it still works—but mostly because there was no clear way to monetize this. As such, it was a purely acedemic exercise.
