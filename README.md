@@ -3,7 +3,7 @@ Scrapes data from [NESN's web site hosted with STATS](http://nesn.stats.com) usi
 
 I began this project while employed at [NESN](http://nesn.com) to better understand Python and to learn Flask. The intended goal was to organize STATS's data into an intelligble resource for use with client applications. As you can see from the website, STATS contains HTML markup circa 1996.
 
-This API was never used for production, partly because scraping HTML is notoriously unreliable——although, even 1 year later (Oct. 2014) this API still functions perfectly——but mostly because there was no clear to monetize this. So, it was a purely acedemic exercise.
+This API was never used for production, partly because scraping HTML is notoriously unreliable—1 year after original development and it still works—but mostly because there was no clear way to monetize this. As such, it was a purely acedemic exercise.
 
 # Installation
 See [`INSTALL.md`](https://github.com/jkereako/stats-html-scraper-api/blob/master/INSTALL.md).
